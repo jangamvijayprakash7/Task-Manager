@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  /* Ensure no sharp edges anywhere */
+  * {
+    border-radius: 0.5rem; /* 8px default rounded corners */
+  }
+  
+  /* Override for specific elements that need different radius */
+  .rounded-none {
+    border-radius: 0;
+  }
+  
+  .rounded-sm {
+    border-radius: 0.25rem; /* 4px */
+  }
+  
+  .rounded-md {
+    border-radius: 0.375rem; /* 6px */
+  }
+  
+  .rounded-lg {
+    border-radius: 0.5rem; /* 8px */
+  }
+  
+  .rounded-xl {
+    border-radius: 0.75rem; /* 12px */
+  }
+  
+  .rounded-2xl {
+    border-radius: 1rem; /* 16px */
+  }
+  
+  .rounded-3xl {
+    border-radius: 1.5rem; /* 24px */
+  }
+  
+  .rounded-full {
+    border-radius: 9999px;
+  }
+  
+  body {
+    @apply bg-gray-50 text-gray-900;
+    margin: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
+}
+
+@layer components {
+  /* Consistent button styles matching reference images */
+  .btn-primary {
+    @apply bg-primary-700 text-white hover:bg-primary-600 active:bg-primary-800 
+           rounded-button px-4 py-2 font-medium transition-colors duration-200
+           focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2
+           disabled:opacity-50 disabled:pointer-events-none;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-100 text-gray-900 hover:bg-gray-200 active:bg-gray-300
+           rounded-button px-4 py-2 font-medium transition-colors duration-200
+           focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2
+           disabled:opacity-50 disabled:pointer-events-none;
+  }
+  
+  .btn-outline {
+    @apply border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 active:bg-gray-100
+           rounded-button px-4 py-2 font-medium transition-colors duration-200
+           focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2
+           disabled:opacity-50 disabled:pointer-events-none;
+  }
+  
+  .btn-ghost {
+    @apply text-gray-700 hover:bg-gray-100 active:bg-gray-200
+           rounded-button px-4 py-2 font-medium transition-colors duration-200
+           focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2
+           disabled:opacity-50 disabled:pointer-events-none;
+  }
+
+  /* Consistent card styles matching reference images */
+  .card {
+    @apply bg-white rounded-card border border-gray-300 shadow-sm;
+  }
+  
+  .card-header {
+    @apply p-6 pb-4;
+  }
+  
+  .card-content {
+    @apply p-6 pt-0;
+  }
+  
+  .card-footer {
+    @apply p-6 pt-0;
+  }
+
+  /* Subtle dark borders for divs with margins */
+  .div-with-border {
+    @apply border border-gray-400 rounded-lg p-4 m-2;
+  }
+  
+  .section-border {
+    @apply border border-gray-300 rounded-lg p-4;
+  }
+
+  /* Consistent input styles matching reference images */
+  .input {
+    @apply w-full px-3 py-2 border border-gray-300 rounded-input
+           focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500
+           placeholder-gray-400 transition-colors duration-200;
+  }
+  
+  .input-search {
+    @apply w-full pl-10 pr-4 py-2 border border-gray-300 rounded-full
+           focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500
+           placeholder-gray-400 transition-colors duration-200;
+  }
+
+  /* Consistent avatar styles - perfect circles */
+  .avatar {
+    @apply rounded-avatar overflow-hidden flex-shrink-0;
+  }
+  
+  .avatar-sm {
+    @apply w-8 h-8;
+  }
+  
+  .avatar-md {
+    @apply w-10 h-10;
+  }
+  
+  .avatar-lg {
+    @apply w-12 h-12;
+  }
+  
+  .avatar-xl {
+    @apply w-16 h-16;
+  }
+
+  /* Consistent spacing utilities */
+  .space-y-consistent > * + * {
+    @apply mt-4;
+  }
+  
+  .space-x-consistent > * + * {
+    @apply ml-4;
+  }
+
+  /* Consistent border radius utilities */
+  .rounded-consistent {
+    @apply rounded-lg;
+  }
+  
+  .rounded-pill {
+    @apply rounded-full;
+  }
+  
+  .rounded-soft {
+    @apply rounded-xl;
+  }
+
+  /* Consistent shadow utilities */
+  .shadow-consistent {
+    @apply shadow-sm;
+  }
+  
+  .shadow-dropdown {
+    @apply shadow-lg;
+  }
+}

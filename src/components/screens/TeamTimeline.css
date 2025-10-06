@@ -1,0 +1,93 @@
+.team-timeline-root {
+  font-family: "Inter", sans-serif;
+  padding: 24px 28px;
+  background: #fff;
+  color: #111827;
+}
+
+.timeline-inner { max-width: 1100px; margin: 12px auto; border:1px solid #e5e7eb; border-radius:12px; padding:16px; background:#fff; overflow:hidden; }
+
+/* header */
+.timeline-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.timeline-header h2 {
+  font-size: 20px;
+  margin: 0;
+  font-weight: 600;
+}
+.subtitle { margin: 2px 0 0 0; color: #6b7280; font-size: 13px; }
+
+/* top actions */
+.timeline-actions { display:flex; gap:10px; align-items:center; }
+.date-btn { display:flex; gap:8px; align-items:center; border-radius:10px; padding:8px 12px; border:1px solid #e6e6e9; background:#fff; cursor:pointer; font-weight:600;}
+.invite-btn { background:#f3e8ff; color:#7c3aed; border:none; padding:8px 14px; border-radius:8px; font-weight:600;}
+.add-btn { background:#000; color:#fff; border:none; padding:8px 14px; border-radius:8px; font-weight:600;}
+
+/* canvas and top dates bar */
+.timeline-canvas { position:relative; margin-top:12px; overflow:hidden; }
+.dates-bar { height:40px; background:#f3f3f4; display:flex; align-items:center; border-radius:10px; }
+.dates-inner { margin-left:160px; display:flex; gap:0; align-items:center; width:100%; height:100%; padding:0 4px; }
+.date { flex:1; text-align:center; background:transparent; color:#6b7280; font-weight:600; line-height:40px; font-size:14px; }
+.date + .date { border-left:1px solid #e5e7eb; }
+
+/* svg connectors overlay (full size of canvas area) */
+.connectors-svg { position:absolute; left:0; top:0; width:100%; height:100%; pointer-events:none; overflow:visible; z-index:0; }
+
+/* rows area */
+.rows { margin-top:12px; display:flex; flex-direction:column; gap:36px; padding-bottom:56px; }
+
+/* single row */
+.row { position:relative; display:flex; align-items:flex-start; gap:12px; min-height:92px; }
+
+/* remove background guide lines behind cards */
+.row::after { display:none; content:none; }
+
+/* left member column */
+.member-col { width:160px; display:flex; align-items:center; gap:10px; color:#374151; margin-top:6px; margin-left:0; }
+.member-col img { width:28px; height:28px; border-radius:50%; }
+.member-name { font-weight:600; font-size:14px; }
+.kebab { display:none; }
+.member-btn { display:flex; align-items:center; gap:10px; background:none; border:none; padding:0; cursor:pointer; }
+
+/* row canvas where absolute task cards live */
+.row-canvas { position:relative; flex:1; min-height:96px; padding-right:32px; }
+
+/* task card: absolutely positioned inside row-canvas */
+.task-card {
+  position:absolute;
+  top:2px;
+  background:#fff;
+  border-radius:10px;
+  padding:12px 14px 12px 10px; /* medium card padding */
+  box-shadow:0 6px 16px rgba(17,24,39,0.06);
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+  min-height:54px;
+  box-sizing:border-box;
+  overflow:hidden;
+  border:1px solid #e5e7eb;
+  z-index:2;
+}
+/* checkbox */
+.task-checkbox { width:14px; height:14px; accent-color:#7c3aed; margin-top:4px; margin-left:-4px; }
+
+/* body inside card */
+.task-body { display:flex; flex-direction:column; gap:8px; min-width:0; }
+.task-title { font-weight:600; color:#111827; font-size:13px; line-height:18px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.task-sub { display:flex; align-items:center; gap:8px; color:#6b7280; font-size:12px; }
+.task-sub img { width:18px; height:18px; border-radius:50%; }
+
+/* marker dot (drawn by SVG) has white stroke to match screenshot */
+
+/* footer */
+.timeline-footer { margin-top:32px; color:#6b7280; text-align:center; font-size:13px; }
+.timeline-footer a { color:#7c3aed; font-weight:600; text-decoration:none; }
+
+
